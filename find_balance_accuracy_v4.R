@@ -10,7 +10,7 @@ file_name_list = list.files(path = "/Users/user/Desktop/BD2K_project/data/")
 #files_name_list 
 num_files = length(file_name_list)
 for (i in 1:num_files) {
-  if(sample.names <- gsub('_stats_preds.RData', '', file_name_list)){
+  if(file_name <- gsub('_stats_preds.RData', '', file_name_list)){
     file_name = file_name_list[(i)]
     load(paste0("/Users/user/Desktop/BD2K_project/data/", file_name))
     stats = confM[(4)]
