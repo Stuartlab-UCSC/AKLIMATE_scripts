@@ -5,7 +5,7 @@
 #
 #***confM Script (2)***
 ##note: file path is non-universal 
-file_name_list = list.files(path = "/Users/user/Desktop/BD2K_project/data/")
+file_name_list = list.files(path = "/scratch/for_gchavez/aklimate_results/thym/models/")
 
 #files_name_list 
 num_files = length(file_name_list)
@@ -18,7 +18,7 @@ for (i in 1:num_files) {
     stats = confM[[4]]
     bal_accs = stats[,11]
     avg_bal_acc = mean(stats[,11])
-    print("hello")
+    print(avg_bal_acc)
   }
   
 }
