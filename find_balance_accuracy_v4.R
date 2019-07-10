@@ -14,7 +14,7 @@ for (i in 1:num_files) {
   file_name = file_name_list[(i)]
   if(length(grep("_stats_preds.RData", file_name ,fixed=TRUE)) == 1){
     
-    load(paste0("/Users/user/Desktop/BD2K_project/data/", file_name))
+    load(paste0("/scratch/for_gchavez/aklimate_results/thym/models/", file_name))
     stats = confM[[4]]
     bal_accs = stats[,11]
     avg_bal_acc = mean(stats[,11])
