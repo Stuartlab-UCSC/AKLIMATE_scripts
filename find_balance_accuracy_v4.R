@@ -18,7 +18,8 @@ for (i in 1:num_files) {
     stats = confM[[4]]
     bal_accs = stats[,11]
     avg_bal_acc = mean(stats[,11])
-    print(avg_bal_acc)
+    print("bal_accs: " bal_accs)
+    print("avg_bal_acc: " avg_bal_acc)
   }
   
 }
