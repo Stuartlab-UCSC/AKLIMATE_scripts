@@ -11,7 +11,7 @@ file_name_list = list.files(path = "/Users/user/Desktop/BD2K_project/data/")
 num_files = length(file_name_list)
 for (i in 1:num_files) {
   #file_name <- file_name_list[i]
-  file_name = file_name_list[[i]]
+  file_name = file_name_list[(i)]
   if(length(grep("_stats_preds.RData", file_name ,fixed=TRUE)) == 1){
   
     load(paste0("/Users/user/Desktop/BD2K_project/data/", file_name))
