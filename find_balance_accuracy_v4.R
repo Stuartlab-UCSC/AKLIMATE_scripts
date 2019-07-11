@@ -38,3 +38,6 @@ print(cat("SD: ", SD1))
 
 SE = sd(bal_accs)/sqrt(length(bal_accs))
 print(cat("SE: ", SE))
+
+summary(bal_accs)
+plot(bal_accs)
