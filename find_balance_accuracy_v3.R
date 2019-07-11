@@ -25,16 +25,3 @@ balance_accuracy = c(avg_bal_acc)
 df = data.frame(file, balance_accuracy)       # df is a data frame
 
 save(ts, file = "ts.Rda")
-
-#bal_acc_list = c(avg_bal_acc1, avg_bal_acc2,..., avg_bal_accN)
-mean1 = (sum(bal_accs))/length(bal_accs)
-print("mean: ")
-print(mean1)
-
-SD1 = sd(bal_accs)
-print("SD: ")
-print(SD1)
-
-SE = sd(bal_accs)/sqrt(length(bal_accs))
-print("SE: ")
-print(SE)
