@@ -5,6 +5,8 @@
 #***confM Script (2)***
 ##note: file path is non-universal 
 #path = "Enter the path for where the AKLIMATE file on your terminal or machine are located"
+#path in ucsc terminal: /scratch/for_gchavez/aklimate_results/thym/models/
+#path in gabes computer: /Users/user/Desktop/BD2K_project/data/
 #file_name_list: Takes all the files and lists them
 file_name_list = list.files(path = "/scratch/for_gchavez/aklimate_results/thym/models/")
 #num_files: The number of files we have
