@@ -6,7 +6,7 @@
 #path in ucsc terminal: /scratch/for_gchavez/aklimate_results/thym/models/
 #path in gabes computer: /Users/user/Desktop/BD2K_project/data/
 #path in jackies computer: /Users/jacquelynroger/Documents/research/RMI/gabe/data
-file_name_list = list.files(path = "/scratch/for_gchavez/aklimate_results/thym/models/")
+file_name_list = list.files(path = getwd())
 # num_files: The number of files we have
 num_files = length(file_name_list)
 
@@ -18,7 +18,7 @@ for (i in 1:num_files) {
   file_name = file_name_list[(i)]
   # LOOP B: This if statement makes sure we only go into the files that are specifically AKLIMATE output files
   if(length(grep("_stats_preds.RData", file_name ,fixed=TRUE)) == 1){
-    load(paste0("/scratch/for_gchavez/aklimate_results/thym/models/", file_name))
+    load(paste0(getwd(), file_name))
     stats = confM[[4]]
     bal_accs = stats[,11]
     bal_accs_all = c(bal_accs_all, bal_accs)
