@@ -3,7 +3,7 @@
 # - make gabes_output 
 
 #2. How to pull an update from Github
-# -cd /scratch/for_gchavez/aklimate_results/lib/
+# -cd /scratch/for_gchavez/aklimate_results/lib/AKLIMATE_scripts
 # -git pull
 
 #3. How to add a script from Github into the server
