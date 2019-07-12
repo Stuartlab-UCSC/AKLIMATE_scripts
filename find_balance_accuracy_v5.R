@@ -3,7 +3,7 @@
 # finds the summary statistics, the standard deviation, the standard error, and plots them.
 
 # file_name_list: Takes all the files and lists them
-file_name_list = list.files(path = "/Users/jacquelynroger/Documents/research/RMI/gabe/data")
+file_name_list = list.files(path = "/scratch/for_gchavez/aklimate_results/thym/models/")
 # num_files: The number of files we have
 num_files = length(file_name_list)
 
