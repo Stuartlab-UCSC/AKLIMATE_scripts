@@ -1,0 +1,35 @@
+#If you want to look at the plots that were generated on the server:
+#1. Open up a terminal window (don't ssh in)
+#2. Use cd to get to your folder which will hold them (gabe's: cd /c/Users/user/Desktop/BD2K_project)
+#3. Use this command to copy a plot into your BD2K folder:
+scp gchavez@tap.soe.ucsc.edu:/scratch/for_gchavez/aklimate_results/brca/Rplots.pdf .
+#Some notes about that command:
+- scp means secure copy (you can use it to copy files back and forth between your local computer and the server)
+
+- The stuff after that is the thing that you want to copy with the path to get there (the server it's on, the path to get there, and the file you want)
+
+- the dot at the end means that you want to copy it to where you are now (in your BD2K folder) (if you wanted to copy it to somewhere else on your computer, you could put the path to that folder instead)
+
+#4. Enter your password when it asks you to
+#5. Use ls to confirm that it is now in your folder
+#*IMPORTANT*: it looks like all of the plots are called the same thing: Rplots.pdf. This means that if you already have one of them 
+#in your folder and you do this command, you might overwrite the existing one. So you could rename the old ones. Maybe rename them
+#according to cohort - for example, if you start out with the command above (#3), you could then do the following command to rename it:
+
+mv Rplots.pdf brca-plot.pdf
+
+#Now, if you want to save another plot, you can use the same command as above, but change the file path for the appropriate cohort. 
+Above is for brca, so you could change that to coadread or one of the other cohorts to get those plots too.
+
+#Example commands:
+#takes the brca cohort plot and creates an image for it in our file
+scp gchavez@tap.soe.ucsc.edu:/scratch/for_gchavez/aklimate_results/brca/Rplots.pdf .
+mv Rplots.pdf brca-plot.pdf
+
+#takes the coadread cohort plot and creates an image for it in our file
+scp gchavez@tap.soe.ucsc.edu:/scratch/for_gchavez/aklimate_results/coadread/Rplots.pdf .
+mv Rplots.pdf coadread-plot.pdf
+
+#in general, to obtain a picture of a plot for a cohort:
+scp(yourserver@somthing.somthing_else:/list/path/for/cohort/data/(enter_the_cohort_data_you_want)/(what_your_plot_is_named.pdf) .
+mv (what_your_plot_is_named.pdf) (your_cohort)-plot.pdf
