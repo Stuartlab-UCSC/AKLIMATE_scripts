@@ -3,6 +3,9 @@
 # finds the summary statistics, the standard deviation, the standard error, and plots them.
 
 # file_name_list: Takes all the files and lists them
+#path in ucsc terminal: /scratch/for_gchavez/aklimate_results/thym/models/
+#path in gabes computer: /Users/user/Desktop/BD2K_project/data/
+#path in jackies computer: /Users/jacquelynroger/Documents/research/RMI/gabe/data
 file_name_list = list.files(path = "/scratch/for_gchavez/aklimate_results/thym/models/")
 # num_files: The number of files we have
 num_files = length(file_name_list)
@@ -27,4 +30,4 @@ for (i in 1:num_files) {
 bal_accs_all = unlist(bal_accs_all)
 
 # Make a boxplot of the balance accuracies in this cohort
-boxplot(bal_accs_all, horizontal = TRUE, main = "Balance accuracies across cohorts", xlab = "Balance accuracy", ylim = c(0, 1))
+boxplot(bal_accs_all, horizontal = TRUE, main = "Balance accuracies across cohorts", xlab = "Balance accuracy", ylim = c(0, 1), ylab = "Cohorts")
