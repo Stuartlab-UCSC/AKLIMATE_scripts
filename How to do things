@@ -1,0 +1,17 @@
+#1. How to make gabes_output
+# -cd /scratch/for_gchavez/aklimate_results/lib/AKLIMATE_scripts/
+# - make gabes_output 
+
+#2. How to pull an update from Github
+# -cd /scratch/for_gchavez/aklimate_results/lib/
+# -git pull
+
+#3. How to add a script from Github into the server
+# -/scratch/for_gchavez/aklimate_results/lib/AKLIMATE_scripts/
+# -git add (name of script you want to add)
+
+#4. How to look inside the vim Makefile
+# -cd /scratch/for_gchavez/aklimate_results/
+# -vim Makefile
+
+#5.
