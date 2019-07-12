@@ -23,6 +23,7 @@ for (i in 1:num_files) {
 }
 
 # This now contains all balance accuracies for the cohort
+#unlist: flattens a list and turns in into sorta a vector
 bal_accs_all = unlist(bal_accs_all)
 
 # Make a boxplot of the balance accuracies in this cohort
