@@ -17,12 +17,13 @@ num_files = length(file_name_list)
 bal_accs_all = list()
 #the types of cohorts we're comparing 
 tumor_type_list = c("brca", "coadread", "lgggbm", "thym", "ucec")
-# LOOP A: This for loop will run through all the files we have 
+# LOOP A: This for loop will run through all the COHORT's we have
 for(tt in tumor_type_list){
  paste("/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep="")
+# LLOP B: This for loop will run through all the files we have 
   for (i in 1:num_files) {
     file_name = file_name_list[(i)]
-    # LOOP B: This if statement makes sure we only go into the files that are specifically AKLIMATE output files
+    # This if statement makes sure we only go into the files that are specifically AKLIMATE output files
     if(length(grep("_stats_preds.RData", file_name ,fixed=TRUE)) == 1){
       load(paste0("/scratch/for_gchavez/aklimate_results/thym/models/", file_name))
       stats = confM[[4]]
