@@ -1,4 +1,4 @@
-## Gabe & Jackie
+## Gabe & Jackie & Verrena & Chris
 # This script prints the average balance accuracy for each AKLIMATE output file,
 # finds the summary statistics, the standard deviation, the standard error, and plots them.
 
@@ -34,5 +34,8 @@ for(tt in tumor_type_list){
   bal_accs_all = unlist(bal_accs_all)
   
   # Make a boxplot of the balance accuracies in this cohort
-  boxplot(bal_accs_all, horizontal = TRUE, main = "Balance accuracies across cohorts", xlab = "Balance accuracy", ylim = c(0, 1), ylab = "Cohorts", names = c("BRCA"))
+  pdf(paste0("/scratch/for_gchavez/aklimate_results/",tt,"-plot.pdf"))
+  boxplot(bal_accs_all, horizontal = TRUE, main = "Balance accuracies across cohorts", xlab = "Balance accuracy"
+          , ylim = c(0, 1), ylab = "Cohorts", names = c("BRCA"))
+  dev.off()
 }
