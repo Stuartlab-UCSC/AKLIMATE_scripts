@@ -6,10 +6,9 @@
 #in ucsc terminal: /scratch/for_gchavez/aklimate_results/thym/models/
 #in gabes computer: /Users/user/Desktop/BD2K_project/data/
 #in jackies computer: /Users/jacquelynroger/Documents/research/RMI/gabe/data/
-
 #tumor_type_list: the types of cohorts we're comparing 
 tumor_type_list = c("brca", "coadread", "lgggbm", "thym", "ucec")
-# LOOP A: This for loop will run through all the files we have 
+# LOOP A: This for loop will run through all the files we have
 for(tt in tumor_type_list){
   filepath = paste("/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep="")
   # file_name_list: Takes all the files and lists them
@@ -27,22 +26,15 @@ for(tt in tumor_type_list){
       stats = confM[[4]]
       bal_accs = stats[,11]
       bal_accs_all = c(bal_accs_all, bal_accs)
+      
     }
   }
-  # This now contains all balance accuracies for the cohort
-  #unlist: flattens a list and turns in into sorta a vector
-  bal_accs_all = unlist(bal_accs_all)
-  
-  # Make a boxplot of the balance accuracies in this cohort
-  pdf(paste0("/scratch/for_gchavez/aklimate_results/",tt,"-plot.pdf"))
-  boxplot(bal_accs_all, horizontal = TRUE, main = "Balance accuracies across cohorts", xlab = "Balance accuracy"
-          , ylim = c(0, 1), ylab = "Cohorts", names = c("BRCA"))
-  dev.off()
 }
-pdf(paste0("/scratch/for_gchavez/aklimate_results/all_tumors-plot.pdf"))
-boxplot(bal_accs_all, main = "Balance accuracies across cohorts", at = c(length(tt)),
-names = c(tt), las = 2,
-col = c("orange","red", "blue", "green", "purple"),
-border = "brown", horizontal = TRUE, notch = TRUE, xlab = "Balance accuracy"
-, ylim = c(0, 1), ylab = "Cohorts"
-)
+#initializes an empty data frame
+df_cohort <- data.frame(matrix(ncol = 2, nrow = num_files))
+x <- c("Cohort", "balance accuracy")
+colnames(df) <- x
+pdf(paste0("/scratch/for_gchavez/aklimate_results/",tt,"-plot.pdf"))
+boxplot(df_cohort, horizontal = TRUE, main = "Balance accuracies across cohorts", xlab = "Balance accuracy"
+        , ylim = c(0, 1), ylab = "Cohorts", names = c("BRCA"))
+dev.off()
