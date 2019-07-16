@@ -46,3 +46,12 @@ col = c("orange","red", "blue", "green", "purple"),
 border = "brown", horizontal = TRUE, notch = TRUE, xlab = "Balance accuracy"
 , ylim = c(0, 1), ylab = "Cohorts"
 )
+#creates a df with two columns, col(1) has the cancer cohort
+#and col(2) has the an array of that cohorts balance accuracys
+df_cohort = data.frame("Cohort"= tumor_type_list,"balance accuracy" = bal_accs, stringsAsFactors = FALSE)
+#this figure is a stacked bot plot plotting the balance accuracys accross 
+#all the cancer types we are given.
+pdf(paste0("/scratch/for_gchavez/aklimate_results/",tt,"-plot.pdf"))
+boxplot(bal_accs_all, horizontal = TRUE, main = "Balance accuracies across cohorts", xlab = "Balance accuracy"
+        , ylim = c(0, 1), ylab = "Cohorts", names = c("BRCA"))
+dev.off()
