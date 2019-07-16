@@ -35,14 +35,15 @@ for(tt in tumor_type_list){
   
   # Make a boxplot of the balance accuracies in this cohort
   pdf(paste0("/scratch/for_gchavez/aklimate_results/",tt,"-plot.pdf"))
-  boxplot(bal_accs_all, horizontal = TRUE, main = "Balance accuracies across cohorts", xlab = "Balance accuracy"
+  boxplot(tt, bal_accs_all, horizontal = TRUE, main = "Balance accuracies across cohorts", xlab = "Balance accuracy"
           , ylim = c(0, 1), ylab = "Cohorts", names = c("BRCA"))
   dev.off()
+  pdf(paste0("/scratch/for_gchavez/aklimate_results/",tt,"-plot.pdf"))
 }
 pdf(paste0("/scratch/for_gchavez/aklimate_results/all_tumors-plot.pdf"))
 boxplot(bal_accs_all, main = "Balance accuracies across cohorts", at = c(length(tt)),
-names = c(tt), las = 2,
-col = c("orange","red", "blue", "green", "purple"),
-border = "brown", horizontal = TRUE, notch = TRUE, xlab = "Balance accuracy"
-, ylim = c(0, 1), ylab = "Cohorts"
+        names = c(tt), las = 2,
+        col = c("orange","red", "blue", "green", "purple"),
+        border = "brown", horizontal = TRUE, notch = TRUE, xlab = "Balance accuracy"
+        , ylim = c(0, 1), ylab = "Cohorts"
 )
