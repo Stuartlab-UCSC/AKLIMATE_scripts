@@ -4,6 +4,7 @@
 
 # file_name_list paths:
 #in ucsc terminal: /scratch/for_gchavez/aklimate_results/thym/models/
+#"/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep=""
 #in gabes computer: /Users/user/Desktop/BD2K_project/data/
 #in jackies computer: /Users/jacquelynroger/Documents/research/RMI/gabe/data/
 #tumor_type_list: the types of cohorts we're comparing 
