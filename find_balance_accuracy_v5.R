@@ -43,10 +43,10 @@ pdf(paste0("/scratch/for_gchavez/aklimate_results/all_tumors-plot.pdf"))
 boxplot(balance_accuracy~cohort,
         data=df_cohort,
         main="Balance accuracies across cohorts",
-        xlab="Balance accuracy",
-        ylab="Cohorts",
+        ylab="Balance accuracy",
+        xlab="Cohorts",
         ylim = c(0,1),
-        col="orange",
+        col= c("#ED2891","#9EDDF9","#B2509E","#CEAC8F","#FBE3C7"),
         border="brown",
         horizontial = TRUE
 )
