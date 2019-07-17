@@ -4,7 +4,7 @@
 # finds the summary statistics, the standard deviation, the standard error, and plots them.
 
 # file_name_list paths:
-#in ucsc terminal: "/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep=""
+#in ucsc terminal:"/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep=""
 #in gabes computer: /Users/user/Desktop/BD2K_project/data/
 #in jackies computer: /Users/jacquelynroger/Documents/research/RMI/gabe/data/
 #tumor_type_list: the types of cohorts we're comparing 
@@ -38,7 +38,8 @@ for(j in 1:length(tumor_type_list)){
 }
 df_cohort = as.data.frame(df_cohort, stringsAsFactors = FALSE)
 df_cohort$balance_accuracy = as.numeric(df_cohort$balance_accuracy)
-print(df_cohort)
+#print(df_cohort)
+pdf(paste0("/scratch/for_gchavez/aklimate_results/",tt,"-plot.pdf"))
 boxplot(balance_accuracy~cohort,
         data=df_cohort,
         main="Balance accuracies across cohorts",
