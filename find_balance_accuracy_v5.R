@@ -1,7 +1,8 @@
 #(Cohort, Attributes, Readily, Identified, Now, AKLIMATE_scripts)
 ## by Gabe & Jackie & Verrena & Chris
-# This script prints the average balance accuracy for each AKLIMATE output file,
-# finds the summary statistics, the standard deviation, the standard error, and plots them.
+# This script prints the average balance accuracy for each Cohort in the AKLIMATE output file,
+# It then finds the summary statistics, the standard deviation, the standard error.
+#Most importantly it put the balance accrcys of th cohorts into a data frame plots it.
 
 # file_name_list paths:
 #in ucsc terminal: /scratch/for_gchavez/aklimate_results/thym/models/
