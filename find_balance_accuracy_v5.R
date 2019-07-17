@@ -39,7 +39,7 @@ for(j in 1:length(tumor_type_list)){
 df_cohort = as.data.frame(df_cohort, stringsAsFactors = FALSE)
 df_cohort$balance_accuracy = as.numeric(df_cohort$balance_accuracy)
 #print(df_cohort)
-pdf(paste0("/scratch/for_gchavez/aklimate_results/",tt,"-plot.pdf"))
+pdf(paste0("/scratch/for_gchavez/aklimate_results/all_tumors-plot.pdf"))
 boxplot(balance_accuracy~cohort,
         data=df_cohort,
         main="Balance accuracies across cohorts",
