@@ -1,4 +1,4 @@
-#(Cohort, Attributes, Readily, Identified, Now, Algorithm)
+#(Cohort, Attributes, Readily, Identified, Now, AKLIMATE_scripts)
 ## by Gabe & Jackie & Verrena & Chris
 # This script prints the average balance accuracy for each AKLIMATE output file,
 # finds the summary statistics, the standard deviation, the standard error, and plots them.
