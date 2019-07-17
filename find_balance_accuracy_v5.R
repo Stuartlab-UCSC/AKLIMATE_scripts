@@ -4,7 +4,7 @@
 # finds the summary statistics, the standard deviation, the standard error, and plots them.
 
 # file_name_list paths:
-#in ucsc terminal: /scratch/for_gchavez/aklimate_results/thym/models/
+#in ucsc terminal: "/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep=""
 #in gabes computer: /Users/user/Desktop/BD2K_project/data/
 #in jackies computer: /Users/jacquelynroger/Documents/research/RMI/gabe/data/
 #tumor_type_list: the types of cohorts we're comparing 
@@ -13,7 +13,7 @@ df_cohort = c()
 # LOOP A: This for loop will run through all the files we have
 for(j in 1:length(tumor_type_list)){
   tt = tumor_type_list[j]
-  filepath = paste("/Users/user/Desktop/BD2K_project/data/")
+  filepath = paste("/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep="")
   # file_name_list: Takes all the files and lists them
   file_name_list = list.files(path = filepath)
   # num_files: The number of files we have
@@ -24,7 +24,7 @@ for(j in 1:length(tumor_type_list)){
     file_name = file_name_list[(i)]
     # LOOP B: This if statement makes sure we only go into the files that are specifically AKLIMATE output files
     if(length(grep("_stats_preds.RData", file_name ,fixed=TRUE)) == 1){
-      load(paste0("/Users/user/Desktop/BD2K_project/data/", file_name))
+      load(paste0("/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep="", file_name))
       # Initialize empty list to store the aggregate of all of the balance accuracies in this cohort
       stats = confM[[4]]
       bal_accs = stats[,11]
