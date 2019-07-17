@@ -62,11 +62,11 @@ pdf(paste0("/scratch/for_gchavez/aklimate_results/all_tumors-plot.pdf"))
 #makes a stacked box plot comparing the balanced accuracies of the cohorts
 boxplot(balance_accuracy~cohort,
         data=df_cohort,
-        main="Balance accuracies across cohorts",
-        ylab="Balance accuracy",
+        main="Balanced accuracies across cohorts",
+        ylab="Balanced accuracy",
         xlab="Cohorts",
         ylim = c(0,1),
         col= c("#ED2891","#9EDDF9","#B2509E","#CEAC8F","#FBE3C7"),
         border="brown",
-        horizontial = TRUE
+        horizontial = FALSE
 )
