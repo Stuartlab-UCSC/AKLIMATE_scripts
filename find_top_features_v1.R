@@ -5,7 +5,7 @@
 #set numba of top features (x)
 x = 10
 #helps so we dont have to write jk... over agian
-load("/Users/user/Desktop/BD2K_project/data/R1_F1_junkle_final_model.RData")
+load("/Users/user/Desktop/BD2K_project/data/R1:F1_junkle_final_model.RData")
 list_of_sets = jklm$rf.stats$importance
 #takes the first set in our list of sets (set = cohorst)
 first_set = list_of_sets[[1]]
