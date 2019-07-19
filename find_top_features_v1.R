@@ -1,12 +1,11 @@
 ###(Cohort, Assays, Readily, Identified, Now, Algorithm)
-#By Gabe, Jackie< and Verena
 #Want to find the most important features of each cancer cohort
 
 #precondition: x must be less that or equal to the numba of features in the first set.
 #set numba of top features (x)
 x = 10
 #helps so we dont have to write jk... over agian
-load("/scratch/for_gchavez/aklimate_results/brca/models/R1:F1_junkle_final_model.RData")
+load("/Users/user/Desktop/BD2K_project/data/R1_F1_junkle_final_model.RData")
 list_of_sets = jklm$rf.stats$importance
 #takes the first set in our list of sets (set = cohorst)
 first_set = list_of_sets[[1]]
@@ -29,7 +28,7 @@ top_features = cbind(feature = first_x_features,
                      importance = first_x_importances,
                      set = first_set_name)
 #when running for real, replace 5 with length(list_of_sets)
-for(j in 2:10452){
+for(j in 2:5){
   current_set = list_of_sets[[j]]
   #can improve by making into a function!
   current_set_name = names(list_of_sets)[j]
@@ -47,8 +46,8 @@ for(j in 2:10452){
   
   top_features = as.data.frame(top_features)
   top_features$importance = as.numeric(as.character(top_features$importance))
-  attach(top_features)
+ attach(top_features, warn.conflicts = FALSE)
   top_features = top_features[order(-importance),]
   top_features = top_features[1:x,]
 }
-print top_features
+print(top_features)
