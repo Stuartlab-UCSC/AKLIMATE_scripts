@@ -13,8 +13,6 @@ for (i in 1:length(tumor_type_list)) {
   Junkle_data_list = c()
   #the path to th files
   filepath = paste("/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep="")
-  #this is where our junkle data is at
-list_of_sets = c(jklm$rf.stats$importance)
   # file_name_list: Takes all the files and lists them
   file_name_list = list.files(path = filepath)
   # num_files: The number of files we have
@@ -24,6 +22,7 @@ list_of_sets = c(jklm$rf.stats$importance)
     file_name = file_name_list[(j)]
     if (length(grep("_junkle_final_model.RData", file_name , fixed = TRUE)) == 1) {
       load(paste0("/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep="", file_name))
+      #this is where our junkle data is at
       list_of_sets = c(jklm$rf.stats$importance)
       #put the data files in a list called:junkle_data_list
       Junkle_data_list = c(Junkle_data_list, Junkle_data_list[j])
