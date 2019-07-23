@@ -14,7 +14,7 @@ for (i in 1:length(tumor_type_list)) {
   #this is where we will eventually stack all the junkle data together
   Junkle_data_list = c()
   #the path to th files
-  filepath = paste("/Users/user/Desktop/BD2K_project/data/")
+  filepath = paste("/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep="")
   # file_name_list: Takes all the files and lists them
   file_name_list = list.files(path = filepath)
   # num_files: The number of files we have
@@ -23,7 +23,7 @@ for (i in 1:length(tumor_type_list)) {
   for (j in 1:num_files) {
     file_name = file_name_list[(j)]
     if (length(grep("_junkle_final_model.RData", file_name , fixed = TRUE)) == 1) {
-      load(paste0("/Users/user/Desktop/BD2K_project/data/", file_name))
+      load(paste0("/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep="", file_name))
       list_of_sets = c(jklm$rf.stats$importance)
       #put the data files in a list called:junkle_data_list
       Junkle_data_list = c(Junkle_data_list, Junkle_data_list[j])
@@ -53,7 +53,7 @@ for (i in 1:length(tumor_type_list)) {
                        set = first_set_name,
                        cross_validation = current_CV)
   #when running for real, replace 5 with length(list_of_sets)
-  for (j in 2:5) {
+  for (j in 2:length(list_of_sets)) {
     current_set = list_of_sets[[j]]
     #can improve by making into a function!
     current_set_name = names(list_of_sets)[j]
