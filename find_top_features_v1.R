@@ -1,8 +1,6 @@
 ###(Cohort, Assays, Readily, Identified, Now, Algorithm)
 #by Gabe & verenna
 #/scratch/for_gchavez/aklimate_results/brca/models/
-#this is where our junkle data is at
-list_of_sets = c(jklm$rf.stats$importance)
 #the five cohorts we're looking at
 tumor_type_list = c("brca", "coadread", "lgggbm", "thym", "ucec")
 #for later use
@@ -15,6 +13,8 @@ for (i in 1:length(tumor_type_list)) {
   Junkle_data_list = c()
   #the path to th files
   filepath = paste("/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep="")
+  #this is where our junkle data is at
+list_of_sets = c(jklm$rf.stats$importance)
   # file_name_list: Takes all the files and lists them
   file_name_list = list.files(path = filepath)
   # num_files: The number of files we have
