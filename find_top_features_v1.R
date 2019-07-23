@@ -29,7 +29,7 @@ for (i in 1:length(tumor_type_list)) {
       Junkle_data_list = c(Junkle_data_list, Junkle_data_list[j])
     }
   }
-  x = 1000
+  x = 100
   #takes the first set in our list of sets (set = cohorst)
   first_set = list_of_sets[[1]]
   #finds the first name of the first set
