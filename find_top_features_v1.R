@@ -45,6 +45,7 @@ for (i in 1:length(tumor_type_list)) {
                          names(first_x_features_and_importances)[i])
     #same as above for the features
     first_x_importances = c(first_x_importances, first_x_features_and_importances[[i]])
+    current_CV = c(current_CV, ceiling(1))
   }
   #tells where to put what in each coloumn
   top_features = cbind(feature = first_x_features,
