@@ -38,6 +38,7 @@ for (i in 1:length(tumor_type_list)) {
   #initializes an empty vector
   first_x_features = c()
   first_x_importances = c()
+  current_CV = c()
   #this loop,
   for (i in 1:x) {
     #combines the lists
