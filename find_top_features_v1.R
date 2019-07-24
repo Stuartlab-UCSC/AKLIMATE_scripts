@@ -28,7 +28,7 @@ for (i in 1:length(tumor_type_list)) {
       Junkle_data_list = c(Junkle_data_list, Junkle_data_list[j])
     }
   }
-  x = 100
+ x = 100
   #takes the first set in our list of sets (set = cohorst)
   first_set = list_of_sets[[1]]
   #finds the first name of the first set
@@ -54,7 +54,7 @@ for (i in 1:length(tumor_type_list)) {
                        set = first_set_name,
                        cross_validation = current_CV)
   #when running for real, replace 5 with length(list_of_sets)
-  for (j in 2:length(list_of_sets)) {
+  for (j in 2:5) {
     current_set = list_of_sets[[j]]
     #can improve by making into a function!
     current_set_name = names(list_of_sets)[j]
@@ -81,6 +81,12 @@ for (i in 1:length(tumor_type_list)) {
     top_features = top_features[order(-importance),]
     top_features = top_features[1:x,]
   }
+  
+  print(top_features)
+  write.table(top_features, file = paste0("/scratch/for_gchavez/aklimate_results/",tt,"_top_features", x ,"-table.tsv")
+              ,append = FALSE, quote = FALSE, sep = "\t", row.names = TRUE,
+              col.names = TRUE)
+  pdf(paste0("/scratch/for_gchavez/aklimate_results/",tt, "_top", x , "-plot.pdf"))
+  plot(top_features$importance, col="blue")
+  print("done")
 }
-print(top_features)
-plot(top_features$importance)
