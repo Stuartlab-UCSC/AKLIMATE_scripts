@@ -1,0 +1,48 @@
+# chrisw
+​
+THIS_DIR=$(shell pwd)
+​
+DATA_DIR=data
+LIB_DIR=lib
+​
+#GABES_SCRIPT=$(LIB_DIR)/Users/user/Documents/find_balance_accuracy_v3.R
+GABES_SCRIPT=$(THIS_DIR)/$(LIB_DIR)/find_balance_accuracy_v3.R
+​
+COHORTS= \
+        brca \
+        coadread \
+        lgggbm \
+        thym \
+        ucec \
+        \
+​
+TARGETS=
+​
+test:
+​
+gabes_output:
+        for dir in $(COHORTS) ; do \
+                echo $${dir} ; \
+                \
+                cd $${dir} && Rscript $(GABES_SCRIPT) models > gabes_output.txt ; \
+                \
+                cd $(THIS_DIR) ; \
+        done ;
+        \
+​
+all: $(TARGETS)
+​
+clean_all: clean_targets clean_tmp
+​
+clean_targets:
+        rm -f $(TARGETS) ;
+        \
+        find . -name "gabes_output.txt" -exec rm -f {} \;
+​
+clean_tmp:
+        rm -f $(wildcard *.tmp) ;
+​
+~
+~
+~
+"Makefile" 44L, 631C                                              40,2-9        All
