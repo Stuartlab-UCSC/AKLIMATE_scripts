@@ -1,5 +1,5 @@
-View(confM$byClass)
-View(confM$table)
+#View(confM$byClass)
+#View(confM$table)
 ###(Cohort, Attributes, Readily, Identified, Now, Algorithm)
 ## Gabe & Jackie & Verrena & Chris
 # This script prints the average balance accuracy for each AKLIMATE output file,
