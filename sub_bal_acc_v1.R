@@ -43,13 +43,15 @@ for (j in 1:length(tumor_type_list)) {
       crossval_bal_acc = rbind(crossval_bal_acc, bal_accs_class)
     }
   }
-    mean_data = c()
+  mean_data = c()
   std_data = c()
   z = 1:ncol(crossval_bal_acc)
   for(i in z){
     mean_data = c(mean_data, mean(crossval_bal_acc[,i]))
     std_data = c(std_data, sd(crossval_bal_acc[,i]))
   }
+  dat = read.table(paste0("/scratch/for_gchavez/aklimate_results/subtypes_mapping.tsv")
+                   , header=TRUE, sep="\t", check.names = FALSE)
   pdf(paste0("/Users/user/Desktop/BD2K_project/data/","sub_", tt, "-plot.pdf"))
   x = barplot(colMeans(crossval_bal_acc),
     main = paste0("Balanced accuracy across the Sub ", tt, " Cohorts"),
@@ -61,6 +63,7 @@ for (j in 1:length(tumor_type_list)) {
   ) 
   arrows(x, mean_data - std_data, x , mean_data + std_data, length = 0.05, angle = 90, code = 3)
   y = round(colMeans(crossval_bal_acc), digits = 2)
-  text(x,colMeans(crossval_bal_acc)-0.05,labels=as.character(y))
+  axis(1, at=x, labels = rownames(stats))
+  text(x-0.3,colMeans(crossval_bal_acc)-0.03,labels=as.character(y))
   dev.off()
 }
