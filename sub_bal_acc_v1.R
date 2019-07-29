@@ -15,6 +15,7 @@
 #brca classes
 #path to brca
 tumor_type_list = c("brca", "coadread", "lgggbm", "thym", "ucec")
+colors = c("#1B9E77", "#D95F02", "#7570B3", "#E7298A", "#66A61E", "#E6AB02", "#A6761D")
 df_cohort = c()
 class_types = c("bal_accs_class1", "bal_accs_class2", "bal_accs_class3", "bal_accs_class4")
 # LOOP A: This for loop will run through all the files we have
@@ -48,8 +49,9 @@ for (j in 1:length(tumor_type_list)) {
     xlab = "Balance accuracy",
     ylab = "Sub Cohorts",
     ylim = c(0, 1),
-    col = "orange",
-    border = "brown"
+    col= colors,
+    border="white"
   )
+  text(x,y+2,labels=as.character(y))
   dev.off()
 }
