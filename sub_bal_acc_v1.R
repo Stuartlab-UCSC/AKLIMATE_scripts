@@ -43,15 +43,24 @@ for (j in 1:length(tumor_type_list)) {
       crossval_bal_acc = rbind(crossval_bal_acc, bal_accs_class)
     }
   }
-  pdf(paste0("/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep="","sub_", tt, "-plot.pdf"))
-  barplot(colMeans(crossval_bal_acc),
-    main = paste0("Balance accuracy across sub", tt, "cohort"),
-    xlab = "Balance accuracy",
-    ylab = "Sub Cohorts",
+    mean_data = c()
+  std_data = c()
+  z = 1:ncol(crossval_bal_acc)
+  for(i in z){
+    mean_data = c(mean_data, mean(crossval_bal_acc[,i]))
+    std_data = c(std_data, sd(crossval_bal_acc[,i]))
+  }
+  pdf(paste0("/Users/user/Desktop/BD2K_project/data/","sub_", tt, "-plot.pdf"))
+  x = barplot(colMeans(crossval_bal_acc),
+    main = paste0("Balanced accuracy across the Sub ", tt, " Cohorts"),
+    xlab = "Sub Cohorts",
+    ylab = "Balanced Accuracy",
     ylim = c(0, 1),
     col= colors,
     border="white"
-  )
-  text(x,y+2,labels=as.character(y))
+  ) 
+  arrows(x, mean_data - std_data, x , mean_data + std_data, length = 0.05, angle = 90, code = 3)
+  y = round(colMeans(crossval_bal_acc), digits = 2)
+  text(x,colMeans(crossval_bal_acc)-0.05,labels=as.character(y))
   dev.off()
 }
