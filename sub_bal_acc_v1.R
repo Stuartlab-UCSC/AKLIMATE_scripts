@@ -76,3 +76,5 @@ for (j in 1:length(tumor_type_list)) {
   text(x-0.3,colMeans(crossval_bal_acc)-0.03,labels=as.character(y))
   dev.off()
 }
+#how to run cd /scratch/for_gchavez/aklimate_results/lib/AKLIMATE_scripts
+# Rscript sub_bal_acc_v1.R
