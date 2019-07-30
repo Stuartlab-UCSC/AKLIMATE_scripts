@@ -50,10 +50,19 @@ for (j in 1:length(tumor_type_list)) {
     mean_data = c(mean_data, mean(crossval_bal_acc[,i]))
     std_data = c(std_data, sd(crossval_bal_acc[,i]))
   }
+    #this lists the first three letters in each subtype_number
+  #substr(dat$subtype_number, 1, 3)
+  sub_cohort_names = c()
+  for(i in 1:length(dat$subtype_number)){
+    if(toupper(substr(tt, 1, 3)) == substr(dat$subtype_number[i], 1, 3)){
+      #print(dat[i,])
+      sub_cohort_names = c(sub_cohort_names,dat$subtype_name[i])
+    }
+  }
   dat = read.table(paste0("/scratch/for_gchavez/aklimate_results/subtypes_mapping.tsv")
                    , header=TRUE, sep="\t", check.names = FALSE)
-  pdf(paste0("/Users/user/Desktop/BD2K_project/data/","sub_", tt, "-plot.pdf"))
-  x = barplot(colMeans(crossval_bal_acc),
+  pdf(paste0("/scratch/for_gchavez/aklimate_results","sub_", tt, "-plot.pdf"))
+    x = barplot(colMeans(crossval_bal_acc),
     main = paste0("Balanced accuracy across the Sub ", tt, " Cohorts"),
     xlab = "Sub Cohorts",
     ylab = "Balanced Accuracy",
@@ -63,7 +72,7 @@ for (j in 1:length(tumor_type_list)) {
   ) 
   arrows(x, mean_data - std_data, x , mean_data + std_data, length = 0.05, angle = 90, code = 3)
   y = round(colMeans(crossval_bal_acc), digits = 2)
-  axis(1, at=x, labels = rownames(stats))
+  axis(1, at=x, labels = sub_cohort_names)
   text(x-0.3,colMeans(crossval_bal_acc)-0.03,labels=as.character(y))
   dev.off()
 }
