@@ -53,14 +53,14 @@ for (j in 1:length(tumor_type_list)) {
     #this lists the first three letters in each subtype_number
   #substr(dat$subtype_number, 1, 3)
   sub_cohort_names = c()
+  dat = read.table(paste0("/scratch/for_gchavez/aklimate_results/subtypes_mapping.tsv")
+                   , header=TRUE, sep="\t", check.names = FALSE)
   for(i in 1:length(dat$subtype_number)){
     if(toupper(substr(tt, 1, 3)) == substr(dat$subtype_number[i], 1, 3)){
       #print(dat[i,])
       sub_cohort_names = c(sub_cohort_names,dat$subtype_name[i])
     }
   }
-  dat = read.table(paste0("/scratch/for_gchavez/aklimate_results/subtypes_mapping.tsv")
-                   , header=TRUE, sep="\t", check.names = FALSE)
   pdf(paste0("/scratch/for_gchavez/aklimate_results","sub_", tt, "-plot.pdf"))
     x = barplot(colMeans(crossval_bal_acc),
     main = paste0("Balanced accuracy across the Sub ", tt, " Cohorts"),
