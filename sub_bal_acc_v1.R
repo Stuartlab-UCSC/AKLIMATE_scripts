@@ -72,8 +72,8 @@ for (j in 1:length(tumor_type_list)) {
   ) 
   arrows(x, mean_data - std_data, x , mean_data + std_data, length = 0.05, angle = 90, code = 3)
   y = round(colMeans(crossval_bal_acc), digits = 2)
-  axis(1, at=x, labels = sub_cohort_names)
-  text(x-0.3,colMeans(crossval_bal_acc)-0.03,labels=as.character(y))
+  axis(1, at=x, labels = sub_cohort_names, srt = 45)
+  text(x-0.3,colMeans(crossval_bal_acc)+0.03,labels=as.character(y))
   dev.off()
 }
 #how to run cd /scratch/for_gchavez/aklimate_results/lib/AKLIMATE_scripts
