@@ -94,11 +94,13 @@ for(tt in cohorts){
   props_df <- props_df[ordering,]
   
   png(paste0(plot_dir
-             ,tt,"_feature_proportion_barplot.png"))
+             ,tt,"_colorfeature_proportion_barplot.png"))
   barplot(props_df, xlab = "number of features", ylab = "proportions in top features"
           , main=paste0("feature types in ",tt," models")
-          ,legend.text = rownames(props_df)#sapply(rownames(props),function(x) strsplit(x,"_",fixed=T)[[1]][2])
-          , args.legend = list(x = "bottomright"))
+          , legend.text = rownames(props_df)#sapply(rownames(props),function(x) strsplit(x,"_",fixed=T)[[1]][2])
+          , args.legend = list(x = "bottomright")
+         )
+          + scale_fill_manual(values = c("green", "violet", "pink"))
   dev.off()
   
   print(tt)
