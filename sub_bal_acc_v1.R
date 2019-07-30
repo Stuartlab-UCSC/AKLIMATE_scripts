@@ -54,7 +54,7 @@ for (j in 1:length(tumor_type_list)) {
   #substr(dat$subtype_number, 1, 3)
   sub_cohort_names = c()
   dat = read.table(paste0("/scratch/for_gchavez/aklimate_results/subtypes_mapping.tsv")
-                   , header=TRUE, sep="\t", check.names = FALSE)
+                   , header=TRUE, sep="\t", check.names = FALSE, stringsAsFactors = FALSE)
   for(i in 1:length(dat$subtype_number)){
     if(toupper(substr(tt, 1, 3)) == substr(dat$subtype_number[i], 1, 3)){
       #print(dat[i,])
