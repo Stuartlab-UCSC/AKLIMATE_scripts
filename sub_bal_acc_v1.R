@@ -66,13 +66,13 @@ for (j in 1:length(tumor_type_list)) {
     main = paste0("Balanced accuracy across the Sub ", tt, " Cohorts"),
     xlab = "Sub Cohorts",
     ylab = "Balanced Accuracy",
-    ylim = c(0, 1),
+    ylim = c(0, 1.1),
     col= colors,
     border="white"
   ) 
   arrows(x, mean_data - std_data, x , mean_data + std_data, length = 0.05, angle = 90, code = 3)
   y = round(colMeans(crossval_bal_acc), digits = 2)
-  axis(1, at=x, labels = sub_cohort_names, srt = 45)
+  text(axis(1, at=x, labels = sub_cohort_names, srt = 60))
   text(x-0.3,colMeans(crossval_bal_acc)+0.03,labels=as.character(y))
   dev.off()
 }
