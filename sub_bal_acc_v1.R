@@ -73,6 +73,7 @@ for (j in 1:length(tumor_type_list)) {
   arrows(x, mean_data - std_data, x , mean_data + std_data, length = 0.05, angle = 90, code = 3)
   y = round(colMeans(crossval_bal_acc), digits = 2)
   text(1, labels = sub_cohort_names, srt = 60)
+  axis(1, at = x)
   #axis(1, at=x, labels = sub_cohort_names, srt = 60)
   text(x-0.3,colMeans(crossval_bal_acc)+0.03,labels=as.character(y))
   dev.off()
