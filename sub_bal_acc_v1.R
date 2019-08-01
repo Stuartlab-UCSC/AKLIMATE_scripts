@@ -87,7 +87,7 @@ for (j in 1:length(tumor_type_list)) {
     text(x-0.25, rep(-0.10, length.out=length(x)), labels = sub_cohort_names[1:4], srt = 60)
   }
   if(tt == coadread){
-    text(x-0.25, rep(-0.2, length.out=length(x)), labels = sub_cohort_names[1:4], srt = 60)
+    text(x-0.25, rep(-0.23, length.out=length(x)), labels = sub_cohort_names[1:4], srt = 60)
   }
   dev.off()
 }
