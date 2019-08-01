@@ -62,11 +62,11 @@ for (j in 1:length(tumor_type_list)) {
     }
   }
   pdf(paste0("/scratch/for_gchavez/aklimate_results","sub_", tt, "-plot.pdf"))
-  x = barplot(colMeans(crossval_bal_acc),
+ x = barplot(colMeans(crossval_bal_acc),
     main = paste0("Balanced accuracy across the Sub ", tt, " Cohorts"),
     xlab = "Sub Cohorts",
     ylab = "Balanced Accuracy",
-    ylim = c(-0.3, 1.1),
+    ylim = c(-0.35, 1.1),
     col= colors,
     border="white"
     ,yaxt='n'
