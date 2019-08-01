@@ -62,7 +62,7 @@ for (j in 1:length(tumor_type_list)) {
     }
   }
   pdf(paste0("/scratch/for_gchavez/aklimate_results","sub_", tt, "-plot.pdf"))
- x = barplot(colMeans(crossval_bal_acc),
+  x = barplot(colMeans(crossval_bal_acc),
     main = paste0("Balanced accuracy across the Sub ", tt, " Cohorts"),
     xlab = "Sub Cohorts",
     ylab = "Balanced Accuracy",
@@ -78,7 +78,7 @@ for (j in 1:length(tumor_type_list)) {
   
   #axis(1, at = x, labels = sub_cohort_names, text(srt = 60))
   #axis(1, at=x, labels = sub_cohort_names, srt = 45)
-  text(x-0.25,colMeans(crossval_bal_acc)+0.03,labels=as.character(y))
+  text(x-0.3,colMeans(crossval_bal_acc)+0.03,labels=as.character(y))
   dev.off()
 }
 #how to run cd /scratch/for_gchavez/aklimate_results/lib/AKLIMATE_scripts
