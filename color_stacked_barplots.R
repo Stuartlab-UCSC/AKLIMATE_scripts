@@ -14,6 +14,7 @@ plot_dir <- "./"
 
 # cohorts to go through
 cohorts <- c("BRCA","COADREAD","LGGGBM","THYM","UCEC")
+colors = c(coral2, darkolivegreen, darkorchid3, darkgoldenrod3)
 
 for(tt in cohorts){
   
