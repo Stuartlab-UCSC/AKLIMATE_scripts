@@ -71,14 +71,24 @@ for (j in 1:length(tumor_type_list)) {
     border="white"
     ,yaxt='n'
   ) 
+  #this adds error bars
   arrows(x, mean_data - std_data, x , mean_data + std_data, length = 0.05, angle = 90, code = 3)
+  #this round the BalAcc for each bar to the 2nd decimal digit
   y = round(colMeans(crossval_bal_acc), digits = 2)
-  text(x-0.25, rep(-0.15, length.out=length(x)), labels = sub_cohort_names[1:4], srt = 60)
+  #this creates the y axis
   axis(2,at=c(0,0.2,0.4,0.6,0.8,1),labels = as.character(c(0,0.2,0.4,0.6,0.8,1)))
-  
-  #axis(1, at = x, labels = sub_cohort_names, text(srt = 60))
-  #axis(1, at=x, labels = sub_cohort_names, srt = 45)
+  #this moves the text for the BalAcc on the bars
   text(x-0.3,colMeans(crossval_bal_acc)+0.03,labels=as.character(y))
+  #this is the text for the subcohorts
+  if(tt == lgggbm | tt == ucec){
+  text(x-0.25, rep(-0.15, length.out=length(x)), labels = sub_cohort_names[1:4], srt = 60)
+  }
+  if(tt == brca | tt == thym){
+    text(x-0.25, rep(-0.10, length.out=length(x)), labels = sub_cohort_names[1:4], srt = 60)
+  }
+  if(tt == coadread){
+    text(x-0.25, rep(-0.2, length.out=length(x)), labels = sub_cohort_names[1:4], srt = 60)
+  }
   dev.off()
 }
 #how to run cd /scratch/for_gchavez/aklimate_results/lib/AKLIMATE_scripts
