@@ -51,7 +51,7 @@ for (i in 1:length(tumor_type_list)) {
   print("big list finished")
   x = 10
   #takes the first set in our list of sets (set = cohorst)
-  feature_table = c(list_of_sets[[1]], list_of_sets[[2]])
+  feature_table = c(data_table[[1]], data_table[[2]])
   #grabs the first 10 rows in our set
   first_x_features_and_importances = df.first_set[1:x]
   #initializes an empty vector
