@@ -2,7 +2,7 @@
 #by Gabe & verenna
 #/scratch/for_gchavez/aklimate_results/brca/models/
 #this is where our junkle data is at
-list_of_sets = c(jklm$rf.stats$importance)
+#list_of_sets = c(jklm$rf.stats$importance)
 #the five cohorts we're looking at
 tumor_type_list = c("brca", "coadread", "lgggbm", "thym", "ucec")
 #for later use
