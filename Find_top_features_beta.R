@@ -21,6 +21,7 @@ for (i in 1:length(tumor_type_list)) {
   # num_files: The number of files we have
   num_files = length(file_name_list)
   feature_table = c()
+  list_of_sets = c()
   #this for loop
   for (j in 1:num_files) {
     file_name = file_name_list[(j)]
