@@ -14,7 +14,7 @@ for (i in 1:length(tumor_type_list)) {
   print(tt)
   #this is where we will eventually stack all the junkle data together
   Junkle_data_list = c()
-  #the path to th files
+  #the path to the files
   filepath = paste("/scratch/for_gchavez_old/aklimate_results/",tt,"models")
    # file_name_list: Takes all the files and lists them
   file_name_list = list.files(path = filepath)
