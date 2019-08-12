@@ -14,7 +14,7 @@ for (i in 1:length(tumor_type_list)) {
   tt = tumor_type_list[i]
   print(tt)
   #the path to the files
-  filepath = paste("/scratch/for_gchavez_old/aklimate_results/",tt,"/models")
+  filepath = paste0("/scratch/for_gchavez_old/aklimate_results/",tt,"/models/")
   # file_name_list: Takes all the files and lists them
   file_name_list = list.files(path = filepath)
   # num_files: The number of files we have
