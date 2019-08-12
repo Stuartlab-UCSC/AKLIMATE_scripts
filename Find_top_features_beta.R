@@ -40,6 +40,7 @@ for (i in 1:length(tumor_type_list)) {
     }
   }
   print("big list finished")
+  print(dim(feature_table))
   #grabs the first 10 rows in our set
   feature_table[order(feature_table$importance, decreasing = TRUE), ]
   top_features = feature_table[1:x, 1]
