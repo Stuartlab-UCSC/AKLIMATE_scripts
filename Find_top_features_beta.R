@@ -27,7 +27,7 @@ for (i in 1:length(tumor_type_list)) {
     if (length(grep("_multiclass_feature_importance", file_name , fixed = TRUE)) == 1) {
       # Read tabular data into R
       data_table = read.table(
-        file_name,
+        paste0(filepath,file_name),
         header = TRUE,
         sep = "\t",
         dec = ".",
