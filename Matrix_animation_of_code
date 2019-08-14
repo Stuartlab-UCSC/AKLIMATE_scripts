@@ -1,3 +1,7 @@
+#*******************************************************************************************************************************
+#This script creates an animation of matrix rain with a portion of our "find_balance_accuracy.r" script as the green text.
+#This can be seen on the our poster as the visualization of the C.A.R.I.N.A pipeline.
+#*******************************************************************************************************************************
 <html>
     <head>
         <style>
