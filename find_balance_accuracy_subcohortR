@@ -2,9 +2,11 @@
 #View(confM$table)
 ###(Cohort, Attributes, Readily, Identified, Now, Algorithm)
 ## Gabe & Jackie & Verrena & Chris
-# This script prints the average balance accuracy for each AKLIMATE output file,
-# finds the summary statistics, the standard deviation, the standard error, and plots them.
-
+#****************************************************************************************************************
+# This script continues the process of the "find_balance_accuracy_cohorts.R" script. Instead of looking at the 
+#balance accuracies of each cohort however, we find the balance accuracy of the invidivual subcorts in each cohort 
+#and individually plot each tumor types sub tumor types.
+#****************************************************************************************************************
 # file_name_list paths:
 #in ucsc terminal:"/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep=""
 #in gabes computer: /Users/user/Desktop/BD2K_project/data/
