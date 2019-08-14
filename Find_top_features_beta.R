@@ -1,5 +1,9 @@
 ###(Cohort, Assays, Readily, Identified, Now, Algorithm)
 #by Gabe & verenna
+#******************************************************************************************
+#This code finds the top features for a Cohort. Add or take away Tumor types in
+#(tumor_type_list) and select how many features to print out by changing the value of (x)
+#******************************************************************************************
 #/scratch/for_gchavez/aklimate_results/brca/models/
 #"/scratch/for_gchavez_old/aklimate_results/",tt,"models"
 #the five cohorts we're looking at
