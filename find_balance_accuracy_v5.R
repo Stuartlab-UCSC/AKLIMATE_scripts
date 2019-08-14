@@ -1,7 +1,9 @@
 ###(Cohort, Attributes, Readily, Identified, Now, Algorithm)
 ## Gabe & Jackie & Verrena & Chris
-# This script prints the average balance accuracy for each Cohort ran through 
-# AKLIMATE and compares them in a Boxplot.
+#*******************************************************************************************************************
+# This script prints the average balance accuracy for a Cohort of Tumor types listed in (tumor_type_list) 
+#We then make a stacked Boxplot comparing the cohorts to thier balanced accuracy.
+********************************************************************************************************************
 # file_name_list paths:
 #in ucsc terminal:"/scratch/for_gchavez/aklimate_results/",tt,"/models/",sep=""
 #in gabes computer: /Users/user/Desktop/BD2K_project/data/
