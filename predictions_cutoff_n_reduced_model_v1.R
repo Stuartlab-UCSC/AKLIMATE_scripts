@@ -1,3 +1,8 @@
+#*********************************************************************************************************************
+#This script takes the tumor types and makes a list with each sample and which class that sample was predicted to be.
+#Choosing a value for (x) will tell us how long our list will be.
+#in a future update, perhaps we can make another column listing which crox validation fold the sample comes from
+#*********************************************************************************************************************
 #Set x to cutoff number
 x = 10
 #tumor_type_list: the types of cohorts we're comparing
@@ -15,11 +20,6 @@ for (j in 1:length(tumor_type_list)){
   num_files = length(file_name_list)
   # Initialize empty list to store the aggregate of all of the balance accuracies in this cohort
   bal_accs_all = c()
-  #for(r in 1:5){
-    #for(f in 1:5){
-      #load(paste0("/scratch/for_gchavez/aklimate_results/brca/models/R",r,":F",f,"_cutoff_"
-      #,x,"_rf_reduced_model_predictions.RData"))
-      #load(paste0("/Users/user/Desktop/BD2K_project/data/"))
   print(tt)
   print("prediction cutoff")
       pedictions = rf.preds
