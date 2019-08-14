@@ -1,3 +1,7 @@
+#****************************************************************************************************************************
+#This is also for those not very familiar with working with the terminal. These instructions can be applied to taking list,
+images, graphs ect... from the output of our other scripts and get them on your computer to view them.
+#****************************************************************************************************************************
 #If you want to look at the plots that were generated on the server:
 #1. Open up a terminal window (don't ssh in)
 #2. Use cd to get to your folder which will hold them (gabe's: cd /c/Users/user/Desktop/BD2K_project)
