@@ -1,3 +1,7 @@
+#********************************************************************************************
+#This is a list of how to do specific tasks in the terminal for those unfamilliar 
+with the file paths
+#********************************************************************************************
 #1. How to make gabes_output
 # - cd /scratch/for_gchavez/aklimate_results
 # - make gabes_output 
