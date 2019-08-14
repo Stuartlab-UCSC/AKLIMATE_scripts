@@ -1,3 +1,8 @@
+#*************************************************************************************************************************
+#This script can be changed to create a makefile in the terminal. This is useful since in the terminal you can only
+#type for example "make gabes_output" and the script will be ran instead of having to go to a certian directory, 
+#git pulling, going to another directory, the running. This is more efficent in the long run but not neccesary.
+#*************************************************************************************************************************
 # chrisw
 ​
 THIS_DIR=$(shell pwd)
